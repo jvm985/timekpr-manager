@@ -1,6 +1,0 @@
-- ik wil een manager app voor alle toestellen met timekpr-next software op mijn netwerk
-https://mjasnik.gitlab.io/timekpr-next/
-- bouw een grafische linux app die draait op deze pc
-- de app scant het netwerk (wifi, bedraad) op alle toestellen, specifie linux computers met sshd open
-- de app kan timekpr commando's geven aan die toestellen via ssh (met keys)
-- zorg voor een handige interface waarmee ik de limieten van timekpr grafisch kan instellen
