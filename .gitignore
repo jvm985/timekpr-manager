@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+
+# App-specific
+devices.json
+startup.log
+startup.log.*
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,4 @@
+PyQt6==6.6.1
+paramiko==3.4.0
+python-nmap==0.7.1
+psutil==5.9.8
