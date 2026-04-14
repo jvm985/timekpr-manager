@@ -1,33 +1,25 @@
 #!/bin/bash
 
-# Repository configuration
+# Repository configuratie
 REPO_NAME="timekpr-manager"
-# Please update your username here if it's different
-GITHUB_USER="joachim" 
+GITHUB_USER="jvm985" 
 
-echo "Initializing Git repository in /home/joachim/develop/time/..."
+echo "Synchroniseren met GitHub: $GITHUB_USER/$REPO_NAME..."
 cd /home/joachim/develop/time/
 
-# Initialize if not already a git repo
-if [ ! -d ".git" ]; then
-    git init
-    echo "Git repository initialized."
-fi
-
-# Add all files
+# Zorg dat alle wijzigingen zijn toegevoegd
 git add .
 
-# Initial commit
-git commit -m "Initial commit: TimeKpr Network Manager - Universal Linux Application"
+# Maak een commit (als er wijzigingen zijn)
+git commit -m "Update: $(date +'%Y-%m-%d %H:%M:%S')" || echo "Geen wijzigingen om te committen."
 
-# Set branch to main
-git branch -M main
+# Forceer de juiste SSH remote URL
+git remote set-url origin "git@github.com:$GITHUB_USER/$REPO_NAME.git"
 
-# Add remote (replaces if already exists)
-git remote remove origin 2>/dev/null
-git remote add origin "https://github.com/$GITHUB_USER/$REPO_NAME.git"
+# Push naar de main branch
+echo "Bezig met pushen naar GitHub via SSH..."
+git push -u origin main
 
 echo "--------------------------------------------------------"
-echo "Ready to push! Use the command below to upload:"
-echo "git push -u origin main"
+echo "Klaar! Je code staat nu op: https://github.com/$GITHUB_USER/$REPO_NAME"
 echo "--------------------------------------------------------"
